@@ -1,0 +1,95 @@
+
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    color: #202270;
+}
+
+body{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    
+    50% {
+    background-position: 100% 50%;
+    }
+
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
+.centrer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.terminal-box{
+    display: none;
+}
+
+.pop-up{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 70vh;
+
+    text-align: justify;
+
+    background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    border-radius: 10px;
+}   
+
+.pop-up button{
+    margin-top: 20px;
+    margin-left: 80%;
+}
+
+.pop-up span{
+    color: rgb(255, 49, 49);
+}
+
+.high-bar{
+    position: relative;
+    top: -0.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    padding-top:;
+}
+
+.high-bar p{
+    color: white;
+}
+
+.high-bar div{
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background-color: rgb(253, 49, 49);
+}
+
+.pop-up-contain{
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+    flex-direction: row-reverse;
+    padding: 20px 0;
+    margin: 3vh;
+}
