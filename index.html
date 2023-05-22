@@ -4,13 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/ressources/terminal.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Louison Feuvrais</title>
 </head>
 <body>
+
+    <!--    Gestion du terminal     -->
+
     <div class="terminal-box centrer" id="terminal">
-        
+
+        <div class="high-bar">
+            <img src="ressources/terminal.png" alt="terminal" width="20px">
+            <p>&#60; Louison Feuvrais /&#62;</p>
+            <div class="leave"></div>
+        </div>
+        <div class="contain-box" id="scroll">
+            <div class="t-text">
+                <pre>                
+     
+     ______   ______     ______     ______    ______    ______     __         __     ______    
+    /\  == \ /\  __ \   /\  == \   /\__  _\  /\  ___\  /\  __ \   /\ \       /\ \   /\  __ \   
+    \ \  _-/ \ \ \/\ \  \ \  __<   \/_/\ \/  \ \  __\  \ \ \/\ \  \ \ \____  \ \ \  \ \ \/\ \  
+     \ \_\    \ \_____\  \ \_\ \_\    \ \_\   \ \_\     \ \_____\  \ \_____\  \ \_\  \ \_____\ 
+      \/_/     \/_____/   \/_/ /_/     \/_/    \/_/      \/_____/   \/_____/   \/_/   \/_____/ 
+                
+      
+                </pre>
+                <div class="welcome">
+                    Bienvenue sur mon portfolio !<br><br>Pour afficher toutes les commandes disponibles utilise la commande <span>help</span>. Pour exécuter une commande vous avez juste à appuyer sur la touche entrée de votre clavier. Certaines fonctionnalités sont cachés, à vous de les trouver 😉.
+                </div>
+    
+                <div class="t-content" id="result"></div>
+            </div>
+    
+            <div class="input-box">
+                <span>lFeuvrais:~/portfolio $&nbsp;</span>
+                <input type="text" id="t-input">
+            </div>
+        </div>
     </div>
+
+    <!--    Gestion de la popup     -->
 
     <div class="pop-up centrer" id="popup">
         <div class="high-bar">
@@ -23,7 +58,6 @@
             <p>Bienvenue sur mon portfolio !<br><br>Ce site est entièrement réalisé en <span>html</span>, <span>css</span> et <span>javascript</span>. Il permet de parcourir un terminal pour en apprendre plus à mon sujet. (Une <span>aide</span> ⚙️ est mise à disposition pour les non expérimentés en la matière)<br></p>
         </div>
     </div>
-
     <script src="js/terminal.js"></script>
 </body>
 </html>

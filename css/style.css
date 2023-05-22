@@ -17,6 +17,7 @@ body{
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     height: 100vh;
+    overflow: hidden;
 }
 
 @keyframes gradient {
@@ -38,13 +39,6 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.terminal-box{
-    display: none;
-    background-color: rgb(54, 54, 54);
-    height: 65%;
-    width: 60%;
 }
 
 /*
@@ -91,6 +85,8 @@ body{
 
 .high-bar p{
     color: white;
+    font-family: 'montserrat', 'Times New Roman', Times, serif;
+    font-weight: 200;
 }
 
 .high-bar div{
@@ -98,6 +94,10 @@ body{
     height: 16px;
     border-radius: 50px;
     background-color: rgb(253, 49, 49);
+}
+
+pre{
+    font-size: calc(800vw / 1018);
 }
 
 .pop-up-contain{
@@ -111,4 +111,123 @@ body{
 
 .pop-up-contain p{
     margin-right: 5vh;
+}
+
+/*
+    Gestion du terminal
+*/
+
+.terminal-box{
+    display: none;
+    background-color: rgb(59, 59, 59);
+    height: 65%;
+    width: 60%;
+    color: white;
+
+    align-items:flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+
+}
+
+.contain-box{
+    overflow-y: auto;
+}
+
+.contain-box::-webkit-scrollbar{
+    width: 5px;
+}
+
+.contain-box::-webkit-scrollbar-track{
+    background-color: rgb(59, 59, 59);
+}
+
+.contain-box::-webkit-scrollbar-thumb{
+    background-color:#23a6d5;
+}
+
+.t-text > div, pre, .input-box span{
+    color: white;
+    font-family: "Ubuntu Mono", monospace;
+
+}
+
+@media (max-width: 800px) {
+
+    .terminal-box{
+        width: 90%;
+    }
+    
+}
+
+.t-text div span, .input-box span{
+    color: #e73c7e;
+}
+
+input{
+    background-color: rgb(59, 59, 59);
+    word-wrap: break-all;
+    border: none;
+    color: white;
+    width: 100%;
+    font-family: "Ubuntu Mono", monospace;
+}
+
+input:focus{
+    outline: transparent;
+}
+
+.t-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 10px;
+    word-break: break-word;
+    
+}
+
+.welcome{
+    padding-left: 5px;
+    padding-top: 10px;
+    background-color: rgb(59, 59, 59);
+}
+
+.input-box{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: calc(100% - 5px);
+}
+
+.input-box span{
+    white-space: nowrap;
+}
+
+/*
+    Gestion de l'affichage des commandes
+*/
+
+.aide span{
+    color: white;
+    font-family: "Ubuntu Mono", monospace;
+    word-break: break-word;
+    word-spacing: 5px;
+}
+
+a{
+    color: #23a6d5;
+}
+
+i{
+    color: white;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 14px;
+
 }
