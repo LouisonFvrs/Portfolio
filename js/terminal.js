@@ -5,6 +5,8 @@ let input = document.getElementById("t-input");
 let result = document.getElementById("result");
 let container = document.getElementById("scroll");
 let tabCommand = ["aide", "get-cv", "get-linkedin", "get-github", "information", "get-projet", "theme"];
+let welcome = document.getElementById("welcome");
+let ascii = document.getElementById('ascii');
 
 /*
     fonction permettant de changer le thème du terminal
@@ -107,20 +109,31 @@ document.addEventListener("keydown", function(event) {
         result.innerHTML += '<br>Voici la liste des thèmes disponibles :<br><br><i>{<br>&nbsp;&nbsp;- Defaut;<br>&nbsp;&nbsp;- Atom;<br>&nbsp;&nbsp;- Dracula;<br>&nbsp;&nbsp;- Tokyo;<br>&nbsp;&nbsp;- Ubuntu;<br>}</i><br><br>Entrer la commande suivante pour définir votre thème : theme.Nom<br>';
        }
 
-        if(inputValue.toUpperCase() == 'THEME.DEFAUT'){
+        if(inputValue.toUpperCase() == 'THEME.DEFAUT')
+        {
             changeTheme(1);
         }
-        if(inputValue.toUpperCase() == 'THEME.ATOM'){
+        if(inputValue.toUpperCase() == 'THEME.ATOM')
+        {
             changeTheme(2);
         }
-        if(inputValue.toUpperCase() == 'THEME.DRACULA'){
+        if(inputValue.toUpperCase() == 'THEME.DRACULA')
+        {
             changeTheme(3);
         }
-       if(inputValue.toUpperCase() == 'THEME.TOKYO'){
+       if(inputValue.toUpperCase() == 'THEME.TOKYO')
+       {
             changeTheme(4);
         }
-        if(inputValue.toUpperCase() == 'THEME.UBUNTU'){
+        if(inputValue.toUpperCase() == 'THEME.UBUNTU')
+        {
             changeTheme(5);
+        }
+
+        if(inputValue == 'cls' || inputValue == 'clear'){
+            welcome.innerHTML = "";
+            result.innerHTML = "";
+            ascii.innerHTML = "";
         }
 
 
