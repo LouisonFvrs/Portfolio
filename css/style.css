@@ -8,6 +8,13 @@
     color: #202270;
 }
 
+:root {
+    --main-bg-color: #3b3b3b;
+    --main-text-color: #ffffff;
+    --important-span: #e73c7e;
+    --highlight-text: #23a6d5;
+  }
+
 /*
     Gestion du background
 */
@@ -15,7 +22,7 @@
 body{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 30s ease infinite;
+    animation: gradient 15s ease infinite;
     height: 100vh;
     overflow: hidden;
 }
@@ -119,10 +126,10 @@ pre{
 
 .terminal-box{
     display: none;
-    background-color: rgb(59, 59, 59);
+    background-color: var(--main-bg-color);
     height: 70%;
     width: 65%;
-    color: white;
+    color: var(--main-text-color);
 
     align-items:flex-start;
     justify-content: flex-start;
@@ -143,15 +150,15 @@ pre{
 }
 
 .contain-box::-webkit-scrollbar-track{
-    background-color: rgb(59, 59, 59);
+    background-color: var(--main-bg-color);
 }
 
 .contain-box::-webkit-scrollbar-thumb{
-    background-color:#23a6d5;
+    background-color: var(--highlight-text);
 }
 
 .t-text > div, pre, .input-box span{
-    color: white;
+    color: var(--main-text-color);
     font-family: "Ubuntu Mono", monospace;
 
 }
@@ -165,14 +172,14 @@ pre{
 }
 
 .t-text div span, .input-box span{
-    color: #e73c7e;
+    color: var(--important-span);
 }
 
 input{
-    background-color: rgb(59, 59, 59);
+    background-color: var(--main-bg-color);
     word-wrap: break-all;
     border: none;
-    color: white;
+    color: var(--main-text-color);
     width: 100%;
     font-family: "Ubuntu Mono", monospace;
 }
@@ -194,7 +201,6 @@ input:focus{
 .welcome{
     padding-left: 5px;
     padding-top: 10px;
-    background-color: rgb(59, 59, 59);
 }
 
 .input-box{
@@ -215,31 +221,31 @@ input:focus{
 */
 
 .aide span{
-    color: white;
+    color: var(--main-text-color);
     font-family: "Ubuntu Mono", monospace;
     word-break: break-word;
     word-spacing: 5px;
 }
 
 a{
-    color: #23a6d5;
+    color: var(--highlight-text);
 }
 
 i{
-    color: white;
+    color: var(--main-text-color);
     font-family: "Ubuntu Mono", monospace;
     font-size: 14px;
 
 }
 
 .t-content > .highlight{
-    color: #23a6d5;
+    color: var(--highlight-text);
     font-family: "Ubuntu Mono", monospace;
 }
 
 table, thead, th, td{
     font-family: "Ubuntu Mono", monospace;
-    color: white;
+    color: var(--main-text-color);
     text-align: center;
 }
 
@@ -256,7 +262,7 @@ th{
 }
 
 table, th, td{
-    border: 1px solid #ffffff;
+    border: 1px solid var(--main-text-color);;
     margin: 0;
     border-collapse: collapse;
 }
