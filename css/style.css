@@ -57,6 +57,7 @@ body{
     align-items: flex-end;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 65vh;
 
     text-align: justify;
