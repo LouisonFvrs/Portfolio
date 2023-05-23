@@ -36,7 +36,7 @@ document.addEventListener("keydown", function(event) {
             Commande aide
         */
         if (inputValue == 'aide' || inputValue == 'help'){
-            result.innerHTML += "<br>Voici quelques commandes à taper pour en apprendre plus sur moi <br><br>";
+            result.innerHTML += "<br>Voici quelques <span class = 'highlight'>commandes</span> à taper pour en apprendre plus sur moi <br><br>";
 
             tabCommand.forEach(element => {
                 result.innerHTML +=  element + " &nbsp;&nbsp;&nbsp;";
@@ -79,10 +79,11 @@ document.addEventListener("keydown", function(event) {
         /*
             Commande get-projet
         */
-       if(inputValue == 'get-Projet'){
-        alert("a");
+       if(inputValue == 'get-projet'){
+        result.innerHTML += '<br><table><thead><tr><th width = "10%">Projet</th><th>Outils</th><th width = "10%">Team</th><th>Description</th><th width = "10%">Voir le projet</th></tr></thead><tbody><tr><td>Gestion étudiant</td><td>Java, JavaFx, SQL, Figma</td><td>Oui</td><td>Ce projet est une application lourde de gestion d&apos;étudiant, on peut visualiser, en fonction de vos permissions lors de votre connexion vous pourrez créer modifier, supprimer des étudiants</td><td><a href="#">Projet</a></td></tr></thead><tbody><tr><td>BoisDuRoy</td><td>HTML, CSS, JS, PHP, SQL, C#, Figma, Git</td><td>Oui</td><td>Le but est de pouvoir visualiser ses informations et effectuer une demande de congé sur une appli web qui pourra être accepter ou non via ld&apos;appli c#</td><td><a href="https://github.com/LouisonFvrs/BoisDuRoy">Projet</a></td></tr><tr><td>Snake</td><td>C#</td><td>Non</td><td>L&apos;objectif était de reproduire le jeu snake afin de me familiariser avec le language C#</td><td><a href="https://github.com/LouisonFvrs/Snake">Projet</a></td></tr><tr><td>Portfolio Terminal</td><td>HTML, CSS, JS</td><td>Non</td><td>Souhaitant réaliser un portfolio un peu original j&apos;ai eu l&apos;idée de réaliser un site web reproduisant visuelement un portfolio mais en y implémentant les fonctionnalités que peux posséder un terminal</td><td><a href="https://github.com/LouisonFvrs/Portfolio">Projet</a></td></tr></tbody></table><br>';
        }
 
+       //   Gestion de la barre de scrolling du terminal pour quelle reste tout en bas
 
         document.getElementById("t-input").value = '';
         container.scrollTop = container.scrollHeight - container.clientHeight;
