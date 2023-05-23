@@ -4,9 +4,11 @@ let leave = document.getElementById('leave');
 let input = document.getElementById("t-input");
 let result = document.getElementById("result");
 let container = document.getElementById("scroll");
-let tabCommand = ["aide", "get-cv", "get-linkedin", "get-github", "information", "get-projet", "theme"];
+let tabCommand = ["get-cv", "get-linkedin", "get-github", "information", "get-projet", "theme"];
 let welcome = document.getElementById("welcome");
 let ascii = document.getElementById('ascii');
+let tabAllCommand = ["get-cv", "get-linkedin", "get-github", "information", "get-projet", "theme", "theme.defaut", "theme.atom", "theme.dracula", "theme.tokyo", "theme.ubuntu", "cls", "clear"];
+let tabPressCount = 0;
 
 /*
     fonction permettant de changer le thème du terminal
@@ -45,14 +47,15 @@ input.addEventListener("blur", function() {
 */
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === 'Enter') {
 
-        let inputValue = document.getElementById('t-input').value;
+    let inputValue = document.getElementById('t-input').value;
+
+    if (event.key === 'Enter') {
 
         /*
             Commande aide
         */
-        if (inputValue == 'aide' || inputValue == 'help'){
+        if (inputValue == 'help'){
             result.innerHTML += "<br>Voici quelques <span class = 'highlight'>commandes</span> à taper pour en apprendre plus sur moi <br><br>";
 
             tabCommand.forEach(element => {
@@ -136,11 +139,52 @@ document.addEventListener("keydown", function(event) {
             ascii.innerHTML = "";
         }
 
-
-       //   Gestion de la barre de scrolling du terminal pour quelle reste tout en bas
-
         document.getElementById("t-input").value = '';
-        container.scrollTop = container.scrollHeight - container.clientHeight;
 
     }
+
+    if(event.key === 'Tab'){
+
+        tabPressCount++;
+
+        event.preventDefault();
+
+        let tabForTabulation = [];
+        
+        for (let i = 0; i < tabAllCommand.length; i++) {
+            let motCourant = tabAllCommand[i];
+            
+            if (motCourant.startsWith(inputValue)  && inputValue.length > 0) {
+              tabForTabulation.push(motCourant);
+            }
+        }
+
+        //si seulement un mot corresponds au début de l'input alors on l'affiche dans l'input
+        if(tabForTabulation.length == 1)
+        {
+            input.value = tabForTabulation[0];
+        }
+
+        if(tabPressCount == 2){
+    
+            //si plusieurs débutent par la même synthaxe que l'input on les affiche dans result
+            if(tabForTabulation.length >= 2)
+            {
+                result.innerHTML += "<br>";
+    
+                for(let i = 0; i < tabForTabulation.length; i++){
+                    result.innerHTML += tabForTabulation[i] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+                result.innerHTML += '<br>';
+            }
+            tabPressCount = 0;
+        }
+    }
+    
+    if(event.key != 'Tab'){
+        tabPressCount = 0;
+    }
+
+    //Gestion de la scroll bar
+    container.scrollTop = container.scrollHeight - container.clientHeight;
 });
