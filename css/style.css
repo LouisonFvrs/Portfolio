@@ -19,6 +19,12 @@
     Gestion du background
 */
 
+h1 {
+    color: var(--important-span);
+    font-weight: 400;
+    font-size: 24px;
+}
+
 body{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -251,6 +257,15 @@ table, thead, th, td{
     font-family: "Ubuntu Mono", monospace;
     color: var(--main-text-color);
     text-align: center;
+}
+
+h4 {
+    color: var(--highlight-text);
+    font-style: italic;
+}
+
+td { 
+    height: 10vh;
 }
 
 .t-content{
